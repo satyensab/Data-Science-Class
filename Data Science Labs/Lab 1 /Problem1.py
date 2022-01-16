@@ -1,5 +1,5 @@
 # Question 1
-# Name:Satyen Sabnis, satyen.sabnis@gmail.com, 1/12/2022, DSCI 1302
+# Name:Satyen Sabnis, ssabnis2@student.gsu.com, 1/12/2022, DSCI 1302
 
 def divisor_user(user_number):
   divisor_list = []
