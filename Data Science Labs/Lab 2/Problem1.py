@@ -7,10 +7,7 @@ class Game:
     self.row = row
     self.col = col
     self.boardArray = np.random.randn(row,col)
-    self.bomb_row = random.randint(0,row-1)
-    self.bomb_col = random.randint(0,col-1)
-
-  
+ 
   def __str__(self):
     return str(self.boardArray)
 
@@ -19,6 +16,7 @@ class Game:
     col = int(input("Which column?\n")) - 1 
     if row > self.row-1 or user_col > self.col-1 or user_row <  0 or col <0:
       print("Dimensions out of bounds. Try again!")
+    else:
       if self.boardArray[row][col] < 0:
         print("BOMB DETECTED!!!!")
         print(self)
@@ -26,9 +24,9 @@ class Game:
         proceed = input("\nDo you want to continue? Y/N ")
         if proceed.lower() == 'y':
           self.play()
-      else:
-        print("hey goodbye, whatever")
-        print(self)
+        else:
+          print("hey goodbye, whatever")
+          print(self)
 
 
 rows = int(input("How many rows?\n"))
