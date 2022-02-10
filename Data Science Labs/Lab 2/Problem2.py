@@ -28,6 +28,10 @@ def wordcount(user_string):
       else:
         word_count[element] = 1
   print(word_count)
+  max_count = max(word_count.values())
+  max_word = max(word_count, key=word_count.get)
+  print("Word with the highest frequency is " + "'" + max_word + "'" + " with a count of " + str(max_count))
+
 
 user_string = input("Enter your text: ")
 wordcount(clean(user_string))
