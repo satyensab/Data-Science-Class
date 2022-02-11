@@ -1,3 +1,6 @@
+# Question 1
+# Name:Satyen Sabnis, ssabnis2@student.gsu.com, 2/11/2022, DSCI 1302
+
 import numpy as np
 
 class GradeStatistics:
