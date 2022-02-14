@@ -2,6 +2,7 @@
 # Name:Satyen Sabnis, ssabnis2@student.gsu.com, 2/11/2022, DSCI 1302
 
 import numpy as np
+import math
 
 class GradeStatistics:
   def __init__(self, user_numpy):
@@ -27,8 +28,17 @@ class GradeStatistics:
     print("\nMedian of all Assignments: " + str(round((np.median(self.user_numpy)),2)))
 
   def mode(self):
-    pass
-  
+    word_dict = {}
+    for grade in self.user_numpy:
+      for element in grade:
+        element = math.floor(element)
+        if element in word_dict:
+           word_dict[element]+=1
+        else:
+          word_dict[element]=1
+    print("\nThe mode of all the assignments: " + str(max(word_dict,key = word_dict.get)))
+
+
   def standard_dev(self):
     print()
     n = 1
@@ -47,6 +57,7 @@ class GradeStatistics:
 
 
 
+
 count_students = int(input("How many students are in your class: "))
 count_assig = int(input("How many assignements did you have?: "))
 input_array = np.random.uniform(1,100,(count_assig,count_students))
@@ -60,6 +71,3 @@ student_class.median()
 student_class.mode()
 student_class.standard_dev()
 student_class.variance()
-
-
-
