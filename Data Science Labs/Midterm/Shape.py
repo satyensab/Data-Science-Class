@@ -1,11 +1,5 @@
 # Classes - Shape Class
 # Name:Satyen Sabnis, ssabnis2@student.gsu.com, 2/25/2022, DSCI 1302
-import math
-
-class Shape:
-  def __init__(self):
-    pass
-    
   def Area(self):
     pass
 
@@ -21,9 +15,9 @@ class Triangle(Shape):
     print("Area of Triangle: " +str(round(area,2)))
 
   def Perimeter(self):
-    c = 
-    perimeter = self.a + self.b + C
-    print("Perimeter of Triangle: " + str(perimeter))
+    c = math.sqrt(self.a**2+self.b**2 - (2*self.a*self.b*math.cos(self.angle_c)))
+    perimeter = self.a + self.b + c
+    print("Perimeter of Triangle: " + str(round(perimeter,2)))
     
 class Rectangle(Shape):
   def __init__(self,height,width):
@@ -36,10 +30,10 @@ class Rectangle(Shape):
 
   def Perimeter(self):
     perimeter = 2*(self.height + self.width)
-    print("Perimeter of triangle: " + str(perimeter))
+    print("Perimeter of Rectangle: " + str(perimeter))
   
 
-obj1 = Triangle(4,5,42)
+obj1 = Triangle(3,4,60)
 obj1.Area()
 obj1.Perimeter()
 
