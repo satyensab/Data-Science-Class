@@ -3,7 +3,7 @@
 import numpy as np
 
 #1. Create an array with values that are spaced linearly in a specified interval between 0.0 100.0 as a numpy.float64, over 25 values
-array1 = np.linspace(0.0,100.00,25,dtype = numpy.float64)
+array1 = np.linspace(0.0,100.00,25,dtype = np.float64)
 print(array1)
 
 #2.Given the following arrays show me a line where I can combine the values into a larger array
