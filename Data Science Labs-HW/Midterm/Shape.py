@@ -1,5 +1,11 @@
 # Classes - Shape Class
 # Name:Satyen Sabnis, ssabnis2@student.gsu.com, 2/25/2022, DSCI 1302
+import math
+
+class Shape:
+  def __init__(self):
+    pass
+    
   def Area(self):
     pass
 
@@ -41,7 +47,4 @@ print()
 obj2 = Rectangle(5,10)
 obj2.Area()
 obj2.Perimeter()
-
- 
-    
 
