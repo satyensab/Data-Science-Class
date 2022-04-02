@@ -5,8 +5,21 @@ import numpy as np
 time = np.arange(np.pi*-3,np.pi*3+1.5,0.1)
 amplitude_sin = np.sin(time)
 amplitude_cos = np.cos(time)
-plt.plot(time,2* amplitude_sin,color = 'darkred')
-plt.plot(time,2* amplitude_cos, linestyle = 'dotted', color = 'darkred')
+
+#sin graph : Implementation Source:https://stackoverflow.com/questions/35372993/can-i-make-a-multi-color-line-in-matplotlib
+for time1, time2, amplitude_sin1,amplitude_sin2 in zip(time, time[1:], amplitude_sin, amplitude_sin[1:]):
+    if amplitude_sin1 > amplitude_sin2:
+        plt.plot([time1, time2], [2* amplitude_sin1, 2* amplitude_sin2], color = 'green')
+    elif amplitude_sin1 < amplitude_sin2:
+        plt.plot([time1, time2], [2* amplitude_sin1, 2* amplitude_sin2], color = 'red')
+           
+#cos graph: Implementation Source:https://stackoverflow.com/questions/35372993/can-i-make-a-multi-color-line-in-matplotlib
+for time1, time2, amplitude_cos1,amplitude_cos2 in zip(time, time[1:], amplitude_cos, amplitude_cos[1:]):
+    if amplitude_cos1 > amplitude_cos2:
+        plt.plot([time1, time2], [2* amplitude_cos1, 2* amplitude_cos2], linestyle = 'dotted', color = 'green')
+    elif amplitude_cos1 < amplitude_cos2:
+        plt.plot([time1, time2], [2* amplitude_cos1, 2* amplitude_cos2], linestyle = 'dotted', color = 'red')
+           
 plt.xlabel('X',fontsize = 15)
 plt.ylabel('Y', fontsize = 15)
 plt.ylim([-4,4])
