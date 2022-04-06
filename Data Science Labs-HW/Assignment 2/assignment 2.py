@@ -39,7 +39,7 @@ for row in x:
 
 
 #Question 2
-x = np.random.choice(np.arange(1,51),(10000,) )
+x = np.random.choice(np.arange(1,51),(1000,))
 
 #1. 
 print("First 10 numbers: " + str(x[:10]))
