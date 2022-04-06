@@ -96,6 +96,21 @@ for i in data_x:
 
 #2.
 annual_growth_rate = (data_y[1:] - data_y[:-1]) / (data_y[:-1]) * 100
+#Question 3
+
+#1.
+data_x = np.loadtxt('US_population.txt', usecols=0, skiprows=1, delimiter = ",", dtype='str')
+data_y = np.loadtxt('US_population.txt', usecols=1, skiprows=1, delimiter = ",")
+
+#cleaning up data(years only)
+cn = 0
+for i in data_x:
+    data_x[cn] =  i.replace("-12-31","")
+    cn+=1
+
+
+#2.
+annual_growth_rate = (data_y[1:] - data_y[:-1]) / (data_y[:-1]) * 100
 #3
 plt.xlabel("Year")
 plt.xticks(np.arange(10, len(data_x)+1, 20))
@@ -105,7 +120,7 @@ plt.ylabel("Population")
 plt.plot(data_x[:72],data_y[:72], color = "red",)
 plt.plot(data_x[72:],data_y[72:], color = "red",  linestyle = "dashed")
 
-plt.title("US Population Chart")
+plt.title("US Population")
 plt.show()
 
 #4.
@@ -115,5 +130,5 @@ plt.xlabel("Year")
 plt.plot(data_x[:72],annual_growth_rate[:72], color = "purple")
 plt.plot(data_x[72:-1],annual_growth_rate[72:], color = "purple", linestyle = "dashed")
 
-plt.title("US Population Chart")
+plt.title("US Population Growth Rate%")
 plt.show()
