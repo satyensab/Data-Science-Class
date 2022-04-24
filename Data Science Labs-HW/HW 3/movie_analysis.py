@@ -27,4 +27,4 @@ print(df[['tickets_sold','month']].corr())
 #5.Can you tell off of this Data set if certain theaters are under performing? 
 #You can see that cinema codes 470 and 534 has a track record of low total sales because their are amongst the lowest total sales but still it is very hard to tell based on this data if a specific theatres is under performing each time or if that was just a one time case. There has to be other certain parameters on the cinema codes that may identify the location,etc. which could indicate certain types of theatres under performing. 
 sort_rev_sal = df.sort_values(by=['total_sales'], ascending = True)
-sort_rev_sal[['cinema_code','total_sales']].head(20) #time of day analysis
+print(sort_rev_sal[['cinema_code','total_sales']].head(20)) 
